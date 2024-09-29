@@ -1,0 +1,372 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #f7f9fc;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    background-color: #3aafa9;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    font-family: fantasy;
+    letter-spacing: 10px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+nav ul li a:hover {
+    color: #f6d55c;
+}
+
+.search-bar {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.search-bar input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    width: 250px;
+    margin-right: 10px;
+    outline: none;
+}
+
+.search-bar button {
+    padding: 10px 15px;
+    background-color: #577590;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-bar button:hover {
+    background-color: #4d708d;
+}
+
+.cart a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.cart a:hover {
+    color: #f6d55c;
+}
+
+/* Products Section */
+.products-section {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.products-section h2 {
+    font-size: 25px;
+    margin-bottom: 40px;
+    color: #22c9c1;
+    font-family: fantasy;
+    letter-spacing: 8px;
+    border: none;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    justify-items: center;
+    padding: 0 20px;
+}
+
+.product {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+    max-width: 240px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.product:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.product img {
+    max-width: 100%;
+    height: 180px;
+    object-fit: contain;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.product h3 {
+    font-size: 14.5px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.p_flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.product p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 20px;
+    height: 45px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.product-actions {
+    margin-top: auto;
+}
+
+.product button {
+    padding: 10px 15px;
+    background-color: #f6d55c;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+.product button:hover {
+    background-color: #f3c95c;
+}
+
+/* Footer */
+footer {
+    background-color: #3aafa9;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    margin-top: 40px;
+}
+
+footer a {
+    color: #f6d55c;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: white;
+}
+
+
+/* modal */
+.modal_1 {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Modal Content */
+.modal_2 {
+    background-color: #fff;
+    padding: 40px;
+    border: 1px solid #888;
+    border-radius: 10px;
+    width: 700px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+    top: 10rem;
+    margin: 0 auto;
+}
+
+/* Close Button */
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Button Styles */
+.btn {
+    background-color: #f38a2f;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #ea6f04;
+}
+
+/* modal end */
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.quantity-controls .btn {
+    padding: 5px 10px;
+    margin: 0 5px;
+}
+
+.price_div {
+    margin-top: 20px;
+}
+.modal_1, .cart_modal {
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;  /* Initially hidden */
+}
+
+.modal_2, .cart_modal_content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+.cart-close-button, .close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.cart-close-button:hover, .cart-close-button:focus,
+.close-button:hover, .close-button:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.view-cart {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: #f1c40f;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+/* Responsive Styles */
+@media (min-width: 1200px) {
+    .products-grid {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    .products-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 991px) {
+    .products-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 767px) {
+    .products-grid {
+        padding: 0;
+        gap: 10px;
+    }
+    .logo, .products-section h2{
+        text-align: center;
+    }
+
+    header {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .modal_2 {
+        width: 450px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .search-bar input {
+        width: 200px;
+    }
+}
