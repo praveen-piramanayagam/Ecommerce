@@ -112,7 +112,6 @@ let Btnclick = (productTitle, productDescription, productPrice) => {
 };
 
 
-
 // Function to show the cart popup
 const showCart = () => {
     let cartModal = document.createElement('div');
@@ -135,7 +134,7 @@ const showCart = () => {
     if (cartItems.length === 0) {
         cartItemsContainer.innerHTML = '<p>Your cart is empty!</p>';
     } else {
-        cartItems.forEach(item => {
+        cartItems.forEach((item, index) => {
             const cartItemDiv = document.createElement('div');
             cartItemDiv.classList.add('cart-item');
             cartItemDiv.innerHTML = `
@@ -143,18 +142,36 @@ const showCart = () => {
                 <p>Price: $${item.price.toFixed(2)}</p>
                 <p>Quantity: ${item.quantity}</p>
                 <p>Total: $${(item.price * item.quantity).toFixed(2)}</p>
+                <button class="btn remove-btn" data-index="${index}">Remove</button>
             `;
             cartItemsContainer.appendChild(cartItemDiv);
         });
+
+        // Add event listeners to remove buttons
+        const removeButtons = cartItemsContainer.querySelectorAll('.remove-btn');
+        removeButtons.forEach(button => {
+            button.addEventListener('click', (event) => {
+                const itemIndex = event.target.getAttribute('data-index');
+                removeFromCart(itemIndex);
+                cartModal.remove();
+                showCart();   
+            });
+        });
     }
+
     cartModal.querySelector('.cart-close-button').onclick = () => {
         cartModal.style.display = 'none';
         cartModal.remove();
-    };
+    }
     cartModal.querySelector('#checkout').onclick = () => {
         alert('Proceed to checkout!');
     };
 };
+
+// Function to remove item from cart
+function removeFromCart(index) {
+    cartItems.splice(index, 1); // Remove the item from the cartItems array
+}
 
 // View cart button
 const viewCartButton = document.createElement('button');
@@ -164,4 +181,3 @@ document.body.appendChild(viewCartButton);
 viewCartButton.onclick = showCart;
 
 fetchProducts();
-
